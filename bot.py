@@ -4,7 +4,7 @@ from telegram.ext import (
     Updater,
     CommandHandler,
     MessageHandler,
-    filters,
+    Filters,
     CallbackContext,
 )
 
@@ -14,14 +14,14 @@ def echo(update: Update, context: CallbackContext) -> None:
 
 
 def main():
-    updater = Updater(token="601285821:AAFxvWDSPSfm4tAV1D01f34uq66Wk4HRoG0")
+    updater = Updater(token="7743437176:AAHTR2dDX78NB80MSzdEJkBne2MyFWC4X-M")
     dispatcher = updater.dispatcher
 
     start_handler = CommandHandler("start", echo)
 
     dispatcher.add_handler(start_handler)
 
-    message_handler = MessageHandler(filters.text, echo)
+    message_handler = MessageHandler(Filters.text, echo)
 
     dispatcher.add_handler(message_handler)
 
